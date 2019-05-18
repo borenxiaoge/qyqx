@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureka-server" />
+        <module name="fm-client" />
+        <module name="fm-server" />
+        <module name="tools" />
+        <module name="user-client" />
+        <module name="user-server" />
+        <module name="user-server-client" />
+        <module name="wechat-server" />
+        <module name="zuul-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="book-server" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="user-client" target="1.8" />
+      <module name="zz-mybatis-generator" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
