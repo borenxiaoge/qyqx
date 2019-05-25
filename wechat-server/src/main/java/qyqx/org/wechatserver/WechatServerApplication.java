@@ -6,8 +6,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.ComponentScan;
 
-@EnableFeignClients
-@ComponentScan(basePackages = {"qyqx.org.web", "qyqx.org.service","qyqx.org.client"})
+@EnableFeignClients(basePackages = {"qyqx.org.client"})
+@ComponentScan(basePackages = {"qyqx.org.web", "qyqx.org.service","qyqx.org.client.impl"})
 @SpringBootApplication
 public class WechatServerApplication {
 
