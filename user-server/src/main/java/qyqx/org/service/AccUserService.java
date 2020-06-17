@@ -1,12 +1,10 @@
 package qyqx.org.service;
 
-import com.example.utils.exp.AppException;
-import qyqx.org.po.AccUser;
+import com.example.utils.ResUtil;
 import qyqx.org.vo.AccUserReq;
-
-import java.util.List;
+import qyqx.org.vo.AccUserRes;
 
 public interface AccUserService {
 
-    public void addAccUser(AccUserReq req) throws AppException;
+    public ResUtil addAccUser(AccUserReq req);
 }

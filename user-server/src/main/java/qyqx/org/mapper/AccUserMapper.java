@@ -81,6 +81,29 @@ public interface AccUserMapper {
     })
     AccUser selectByPrimaryKey(AccUserKey key);
 
+    @Select({
+            "select",
+            "user_id, open_id, user_name, register_date, register_time, avatarUrl, gender, ",
+            "language, country, province, city, last_up_time",
+            "from acc_user",
+            "where open_id = #{openId,jdbcType=VARCHAR}"
+    })
+    @Results({
+            @Result(column="user_id", property="userId", jdbcType=JdbcType.VARCHAR, id=true),
+            @Result(column="open_id", property="openId", jdbcType=JdbcType.VARCHAR, id=true),
+            @Result(column="user_name", property="userName", jdbcType=JdbcType.VARCHAR),
+            @Result(column="register_date", property="registerDate", jdbcType=JdbcType.DATE),
+            @Result(column="register_time", property="registerTime", jdbcType=JdbcType.TIME),
+            @Result(column="avatarUrl", property="avatarurl", jdbcType=JdbcType.VARCHAR),
+            @Result(column="gender", property="gender", jdbcType=JdbcType.CHAR),
+            @Result(column="language", property="language", jdbcType=JdbcType.VARCHAR),
+            @Result(column="country", property="country", jdbcType=JdbcType.VARCHAR),
+            @Result(column="province", property="province", jdbcType=JdbcType.VARCHAR),
+            @Result(column="city", property="city", jdbcType=JdbcType.VARCHAR),
+            @Result(column="last_up_time", property="lastUpTime", jdbcType=JdbcType.TIMESTAMP)
+    })
+    AccUser selectByOpenId(String openid);
+
     @UpdateProvider(type=AccUserSqlProvider.class, method="updateByExampleSelective")
     int updateByExampleSelective(@Param("record") AccUser record, @Param("example") AccUserExample example);
 
